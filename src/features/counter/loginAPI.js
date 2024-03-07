@@ -1,23 +1,11 @@
 import axios from 'axios'
 
-const MY_SERVER ="http://127.0.0.1:8000/products"
+const MY_SERVER ="http://127.0.0.1:8000/login"
 
-export function fetchProducts() {
-  return axios.get(MY_SERVER)
+export function doLogin(cred) {
+  return axios.post(MY_SERVER,cred)
 }
 
-export function delProduct(id) {
-    return axios.delete(MY_SERVER + "/" +id)
-  }
-
-  export function addProduct(prod) {
-    // console.log(prod);
-    return axios.post(MY_SERVER,prod)
-  }
-
-  export function updProduct(prod) {
-    return axios.put(MY_SERVER +"/" +prod.id,prod)
-  }
 // נתיבי לוגאסי
 // from . import views
 // urlpatterns = [
